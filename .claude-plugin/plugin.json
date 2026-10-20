@@ -1,6 +1,6 @@
 {
   "name": "noc",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "NOC Copilot for the company: fault-domain analysis, next checks, ticket notes, handovers and escalation drafts from pasted CLI output, alarms, screenshots and ticket text. Local only; no NMS access.",
   "author": { "name": "Hamza Abid", "email": "abidhamza8812@gmail.com" },
   "license": "UNLICENSED",

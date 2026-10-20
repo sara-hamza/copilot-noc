@@ -1,7 +1,7 @@
 ---
 name: noc-copilot
 description: This skill should be used when a NOC engineer pastes OLT/ONT CLI output, optical levels, alarms, NMS screenshots, PPPoE/session state, MAC/VLAN details or ticket text and wants troubleshooting help - "where is this fault", "what should I check next", "ONT offline", "no PPPoE session", "LOS", "dying gasp", "write a ticket note", "handover", "escalate to field/engineering/RSP". It covers GPON/FTTP fault-domain analysis for a wholesale fibre network. Local only; it never queries the NMS.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # NOC Copilot
@@ -12,7 +12,7 @@ Help a NOC engineer get from "what I can see" to "where the fault is, what to ch
 
 1. **INPUT** - the engineer pastes evidence. Apply `copilot-common` privacy rules. If a screenshot is given, transcribe it first (screenshot-reader).
 2. **UNDERSTAND** - identify service type (residential FTTP, business, multicast/IPTV, voice), what the customer symptom is, and what the engineer wants (triage, note, handover, escalation).
-3. **REASON** - walk the layers bottom-up and stop at the first layer that fails. See `references/fault-domains.md`.
+3. **REASON** - walk the layers bottom-up and stop at the first layer that fails. See `references/fault-domains.md`. Name the fault type from `references/outage-playbook.md`, and only propose checks the NOC can run (`references/current-tools.md`); for data held elsewhere, say who to ask.
 4. **ASSIST** - produce the output template for the mode.
 5. **HUMAN** - the engineer runs the checks and updates the ticket. Never say a check "was done" unless the engineer said so.
 
@@ -79,3 +79,4 @@ SUGGESTED TICKET NOTE
 - Do not tell the engineer to reset, reprovision or shut ports; list it as a check they may choose to perform, with its impact.
 - Customer identifiers (name, address, phone, service ID) stay out of handovers and escalations unless the engineer includes them.
 - When evidence is thin, say `DO NOT CONCLUDE YET` and list the single most discriminating check.
+- Severity and escalation follow the proposed matrix in `references/ticket-templates.md` (draft until agreed). Quote it as proposed, not as policy.

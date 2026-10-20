@@ -14,4 +14,4 @@ CONFIDENCE
 EVIDENCE (✓ / ✗ / ?)
 ONE CHECK THAT WOULD CONFIRM IT
 ```
-Use `references/fault-domains.md`. No ticket note, no long explanation.
+Use `${CLAUDE_PLUGIN_ROOT}/skills/noc-copilot/references/fault-domains.md`. No ticket note, no long explanation.
